@@ -8,7 +8,7 @@
 }
 .title{
   display: block;
-
+ margin: auto;
 }
 .imageContainer{
   margin:auto;
@@ -170,5 +170,14 @@ img{
   }
   .searchString{
     width:50%
+  }
+}
+
+@media only screen and (min-width:600px) and (width: 800px) {
+  .imageContainer{
+    margin:auto;
+    margin-left: 15px;
+    display: grid;
+    grid-template-columns: repeat(2,200px);
   }
 }

@@ -40,21 +40,21 @@ export const Header = ({setInputQuery,inputQuery,setPage}) => {
                 <h1 className="title">Search Images</h1>
             </div>
             <div>
-                <h5 className="title">
+                <h6 className="title">
                     Input and press enter to search awesome images!
-                </h5>
+                </h6>
             </div>
             <div className="searchContainer">
                 <input type="search" className="search" onKeyUp={onInput} />
-            <div className= {searchSuggestions ? "searchString" : "displayNone"}>
-                {
-                    (filteredArray.length>0) ? <>{filteredArray.map((value,i) => (
-                        <li key={i} onClick={()=> setSuggestions(value)} className="searchSuggestions" style={{color:'black'}}>{value}</li>
-                    ))}<button onClick={clearSearchItems} className="clearSearchButton">Clear</button>
-                    </>
-                    :null
-                }
-            </div>
+                <div className= {searchSuggestions ? "searchString" : "displayNone"}>
+                    {
+                        (filteredArray.length>0) ? <>{filteredArray.map((value,i) => (
+                            <li key={i} onClick={()=> setSuggestions(value)} className="searchSuggestions" style={{color:'black'}}>{value}</li>
+                        ))}<button onClick={clearSearchItems} className="clearSearchButton">Clear</button>
+                        </>
+                        :null
+                    }
+                </div>
             </div>
         </div>
     )

@@ -44,7 +44,7 @@ export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,
                 })
              }
              <div className="moreImages">
-                {inputQuery!=="" && page<10 ? <h3>Loading</h3> : <h4>..</h4>}
+                {inputQuery!=="" && page<10 ? <h3>Loading</h3> : <h4>Thats all the images we have for this search..</h4>}
              </div>
         </div>
     )
