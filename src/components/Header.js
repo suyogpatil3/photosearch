@@ -13,11 +13,16 @@ export const Header = ({setInputQuery,inputQuery,setPage}) => {
             setSearchSuggestions(false);
         }
     }
+    const setSuggestions = (val) => {
+        setInputQuery(val);
+        setSearchSuggestions(false);
+    }
     const onInput = (e) => {
         //for search suggestions
         let input  = e.target.value;
         let array = storedInputs.filter((inp) => inp.includes(input))
         setFilteredArray(array);
+        setSearchSuggestions(true);
         //for getting input only on enter key
         if(e.key === 'Enter'&& input!==""){
             setInputQuery(input);
@@ -44,7 +49,7 @@ export const Header = ({setInputQuery,inputQuery,setPage}) => {
             <div className= {searchSuggestions ? "searchString" : "displayNone"}>
                 {
                     (filteredArray.length>0) ? <>{filteredArray.map((value,i) => (
-                        <li key={i} onClick={()=>setInputQuery(value)} className="searchSuggestions" style={{color:'black'}}>{value}</li>
+                        <li key={i} onClick={()=> setSuggestions(value)} className="searchSuggestions" style={{color:'black'}}>{value}</li>
                     ))}<button onClick={clearSearchItems} className="clearSearchButton">Clear</button>
                     </>
                     :null

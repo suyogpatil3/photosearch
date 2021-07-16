@@ -1,6 +1,7 @@
 import React,{useCallback,useRef} from 'react'
+import { Loading } from './Loading';
 
-export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,page,setPage,error}) => {
+export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,page,setPage}) => {
     const pageNo = useRef();
     const lastImageOnPage = useCallback((image) => {
         if(loading) return //return because we dont want ot check window if images are still loading
@@ -42,6 +43,9 @@ export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,
                     style={{cursor:"pointer"}}/>
                 })
              }
+             <div className="moreImages">
+                {inputQuery!=="" && page<10 ? <h3>Loading</h3> : <h4>..</h4>}
+             </div>
         </div>
     )
 }

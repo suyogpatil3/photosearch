@@ -79,7 +79,11 @@ img{
   text-decoration: none;
   list-style-type: none;
 }
-
+.moreImages{
+  display: grid;
+  place-items: center;
+  height: 30px;
+}
 
 .loading{
   display: flex;
