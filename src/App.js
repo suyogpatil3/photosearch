@@ -37,7 +37,9 @@ function App() {
   }
 
 //for getting default photos
-  const defaultUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=c603ee6ad346f3682d963bc43161ad94&page=${page}&format=json&nojsoncallback=1`
+//changed the default url given by company to a url return default dog images because the provided default url contained adult images
+  // const defaultUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=c603ee6ad346f3682d963bc43161ad94&page=${page}&format=json&nojsoncallback=1`
+  const defaultUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c603ee6ad346f3682d963bc43161ad94&page=${page}&tags=dogs&format=json&nojsoncallback=1`
   useEffect(() => {
     if(inputQuery==="")
     fetchDataFromUrl(defaultUrl);
