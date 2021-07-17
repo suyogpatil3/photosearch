@@ -40,7 +40,7 @@ function App() {
     })
   }
 
-//*Please note* - I have changed the default url given by company to a url returning default dog images because the provided default url 
+//*Please note* - I have changed the default url given by company to a url returning default images of pets because the provided default url 
   //use to return a few adult images. I went through the documentation for the getRecent method - https://www.flickr.com/services/api/flickr.photos.getRecent.html
   //but it didn't have a safe search option for getRecent method unlike other methods.I have also commented the same API below which can be used for the getRecent method.
   // const defaultUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=c603ee6ad346f3682d963bc43161ad94&page=${page}&format=json&nojsoncallback=1`
