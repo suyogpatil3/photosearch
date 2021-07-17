@@ -1,8 +1,7 @@
 import React,{useCallback,useRef} from 'react'
 import { ErrorComponent } from './ErrorComponent';
-import { Loading } from './Loading';
 
-export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,page,setPage}) => {
+export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,page,setPage,totalPages}) => {
     const pageNo = useRef();
     const lastImageOnPage = useCallback((image) => {
         if(loading) return //return because we dont want ot check window if images are still loading
@@ -11,7 +10,7 @@ export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,
         }
         //setting new reference to end of new page
         pageNo.current = new IntersectionObserver(entries => { //function watches all the entries that it is watching currently
-            if(entries[0].isIntersecting && page<10){ //This checks if the image is currently there on the page
+            if(entries[0].isIntersecting && page<totalPages){ //This checks if the image is currently there on the page
                 setPage(prevPage => prevPage+1)
             }
         }) 
@@ -45,7 +44,7 @@ export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,
                 })
              }
              <div className="moreImages">
-                {(inputQuery!=="" && page<10 && imagesArray.length>1) ? <h3>Loading</h3> : <ErrorComponent message="You've reached the end!"/>}
+                {(inputQuery!=="" && page>totalPages && imagesArray.length>1) ?  <ErrorComponent message="You've reached the end!"/> : <h3>Loading</h3>}
              </div>
         </div>
     )
