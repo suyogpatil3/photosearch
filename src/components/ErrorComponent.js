@@ -1,11 +1,11 @@
 import React from 'react'
 import errorImg from '../images/eImg.svg'
 
-export const ErrorComponent = () => {
+export const ErrorComponent = ({message}) => {
     return (
         <div className="errorImg">
             <img src={errorImg}/>
-            <h4>Sorry!! Some error occured</h4>
+            <h5>{message}</h5>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React ,{useState} from 'react';
+import Button from './StyledButton';
 
 export const Header = ({setInputQuery,inputQuery,setPage}) => { 
     var array = JSON.parse(localStorage.getItem('storedInput'))||[];
@@ -20,7 +21,7 @@ export const Header = ({setInputQuery,inputQuery,setPage}) => {
     const onInput = (e) => {
         //for search suggestions
         let input  = e.target.value;
-        let array = storedInputs.filter((inp) => inp.includes(input))
+        let array = storedInputs.filter((inp) => (inp.toLowerCase().includes(input.toLowerCase())))
         setFilteredArray(array);
         setSearchSuggestions(true);
         //for getting input only on enter key
@@ -50,7 +51,7 @@ export const Header = ({setInputQuery,inputQuery,setPage}) => {
                     {
                         (filteredArray.length>0) ? <>{filteredArray.map((value,i) => (
                             <li key={i} onClick={()=> setSuggestions(value)} className="searchSuggestions" style={{color:'black'}}>{value}</li>
-                        ))}<button onClick={clearSearchItems} className="clearSearchButton">Clear</button>
+                        ))}< Button onClick={clearSearchItems}>Clear</Button>
                         </>
                         :null
                     }

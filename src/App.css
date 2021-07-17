@@ -1,7 +1,4 @@
-.rowContainer{
-  display: grid;
-  grid-template-columns: repeat(3,400px);
-}
+
 
 .body{
   margin-top: 20px;
@@ -24,26 +21,31 @@
   align-items: center;
   height:40px;
   text-align: center;
+  margin-top:5px;
+  width:300px;
 }
 .searchString{
   position: absolute;
   z-index: 4;
-  background-color:rgb(253, 237, 237);
-  top: 23%;
-  width: 15%;
+  background-color:rgb(255, 255, 255);
+  top:120px;
+  width: 300px;
   text-align: center;
   margin-top: 60px;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
 }
-.clearSearchButton{
-  background-color: #ff5d33f1;
-  color:white;
-  border-radius: 5px;
-  border-style: none;
-  height:25px;
-  margin-bottom: 5px;
 
+.searchSuggestions{
+  cursor:pointer;
+  color:black;
+  margin:5px;
+  padding:5px;
+  border-bottom: 1px solid rgb(173, 172, 172);
+  text-align: left;
+  text-decoration: none;
+  width: 300px;
+  list-style-type: none;
 }
 img{
   max-width: 250px;
@@ -66,19 +68,11 @@ img{
 }
 
 .errorImg{
-  width:300px;
+  width:350px;
   height:auto;
   margin: auto;
 }
 
-.searchSuggestions{
-  cursor:pointer;
-  color:'black';
-  margin:5px;
-  padding:5px;
-  text-decoration: none;
-  list-style-type: none;
-}
 .moreImages{
   display: grid;
   place-items: center;
@@ -169,7 +163,8 @@ img{
      z-index: 50;
   }
   .searchString{
-    width:50%
+    width:300px;
+    top:112px;
   }
 }
 
