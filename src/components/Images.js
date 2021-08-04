@@ -32,15 +32,16 @@ export const Images = ({imagesArray,inputQuery,setOpenModal,setModalSrc,loading,
                     <div>{loading && 'Loading...'}</div>
                  return<img src={link} 
                     alt="image-error" 
-                    onClick={() => setModal(link)} 
-                    style={{cursor:"pointer"}}
+                    onClick={() => setModal(link)}
                     ref = {lastImageOnPage}
                     />
                  }
-                    return<img src={link} 
-                    alt="image-error" 
+                    return <div ><img src={link} 
+                    className="homeImage"
+                    alt="image-error"
                     onClick={() => setModal(link)} 
                     style={{cursor:"pointer"}}/>
+                    </div>
                 })
              }
              <div className="moreImages">

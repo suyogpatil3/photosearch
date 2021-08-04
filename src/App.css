@@ -7,6 +7,21 @@
   display: block;
  margin: auto;
 }
+.imageDiv{
+  
+max-width: 130px;
+}
+.homeImage{
+  width: 200px;
+  padding:5px;
+}
+.homeImage:hover{
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.418);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.418);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0,  0.418);
+  -o-box-shadow: 0 0 8px rgba(0, 0, 0,  0.418);
+}
+
 .imageContainer{
   margin:auto;
   margin-left: 15px;
